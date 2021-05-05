@@ -2,7 +2,7 @@ package vong_lap_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class draw_menu {
+public class DrawMenu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();

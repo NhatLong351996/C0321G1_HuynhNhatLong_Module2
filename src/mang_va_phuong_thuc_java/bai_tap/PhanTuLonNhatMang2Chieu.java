@@ -2,7 +2,7 @@ package mang_va_phuong_thuc_java.bai_tap;
 
 import java.util.Scanner;
 
-public class Phan_Tu_Lon_Nhat_Mang_2_Chieu {
+public class PhanTuLonNhatMang2Chieu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the rows");

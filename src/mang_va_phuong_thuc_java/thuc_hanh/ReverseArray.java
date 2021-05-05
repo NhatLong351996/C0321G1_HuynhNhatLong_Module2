@@ -2,7 +2,7 @@ package mang_va_phuong_thuc_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class Reverse_Array {
+public class ReverseArray {
     public static void main(String[] args) {
         int size;
         Scanner scanner = new Scanner(System.in);

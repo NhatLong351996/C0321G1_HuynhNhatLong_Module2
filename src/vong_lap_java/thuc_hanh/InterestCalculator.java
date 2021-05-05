@@ -2,7 +2,7 @@ package vong_lap_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class interest_calculator {
+public class InterestCalculator {
     public static void main(String[] args) {
         double toltalinterest = 0;
         Scanner scanner = new Scanner(System.in);

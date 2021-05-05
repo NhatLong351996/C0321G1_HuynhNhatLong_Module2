@@ -2,7 +2,7 @@ package mang_va_phuong_thuc_java.bai_tap;
 
 import java.util.Scanner;
 
-public class Them_Phan_Tu_Vao_Mang {
+public class ThemPhanTuVaoMang {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a size: ");

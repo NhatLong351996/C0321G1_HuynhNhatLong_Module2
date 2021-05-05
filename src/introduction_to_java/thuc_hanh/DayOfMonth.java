@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class dayofmonth {
+public class DayOfMonth {
     public static void main(String[] args) {
         String dayInMonth;
         Scanner scanner = new Scanner(System.in);

@@ -2,7 +2,7 @@ package mang_va_phuong_thuc_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class Fahrenheit_Celcius {
+public class FahrenheitCelcius {
     public static double celciusToFahrenheit(double celsius) {
         double fahrenheit = (9.0 / 5) * celsius + 32;
         return fahrenheit;

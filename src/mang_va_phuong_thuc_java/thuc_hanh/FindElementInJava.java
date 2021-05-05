@@ -2,7 +2,7 @@ package mang_va_phuong_thuc_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class Find_Element_In_Java {
+public class FindElementInJava {
     public static void main(String[] args) {
         String[] students = {"Christian", "Michael", "Camila", "Sienna", "Tanya", "Connor", "Zachariah", "Mallory", "Zoe", "Emily"};
         Scanner scanner = new Scanner(System.in);

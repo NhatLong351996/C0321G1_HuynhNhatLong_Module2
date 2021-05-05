@@ -2,7 +2,7 @@ package vong_lap_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class greated_comon_factor {
+public class GreatedComonFactor {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter num a:");

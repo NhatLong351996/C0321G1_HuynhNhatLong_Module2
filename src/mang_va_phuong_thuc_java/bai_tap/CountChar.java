@@ -2,7 +2,7 @@ package mang_va_phuong_thuc_java.bai_tap;
 
 import java.util.Scanner;
 
-public class Count_Char {
+public class CountChar {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String str = "Code Gym";

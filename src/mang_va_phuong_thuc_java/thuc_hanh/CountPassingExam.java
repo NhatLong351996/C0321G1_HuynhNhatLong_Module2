@@ -2,7 +2,7 @@ package mang_va_phuong_thuc_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class Count_Passing_Exam {
+public class CountPassingExam {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int size;

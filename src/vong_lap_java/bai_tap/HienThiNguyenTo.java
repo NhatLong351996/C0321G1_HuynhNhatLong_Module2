@@ -2,7 +2,7 @@ package vong_lap_java.bai_tap;
 
 import java.util.Scanner;
 
-public class hien_thi_nguyen_to {
+public class HienThiNguyenTo {
     public static void main(String[] args) {
         int n;
         int status = 1;

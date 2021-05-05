@@ -2,7 +2,7 @@ package mang_va_phuong_thuc_java.thuc_hanh;
 
 import java.util.Scanner;
 
-public class Find_Max_Element {
+public class FindMaxElement {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int size;

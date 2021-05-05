@@ -1,6 +1,6 @@
 package vong_lap_java.bai_tap;
 
-public class _so_nguyen_to_100 {
+public class SoNguyenTo100 {
     public static void main(String[] args) {
         int num = 3;
         int status = 1;
