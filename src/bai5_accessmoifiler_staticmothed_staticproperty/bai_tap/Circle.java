@@ -5,7 +5,6 @@ public class Circle {
     private String color = "red";
 
     public Circle(){
-
     }
     public Circle(double radius){
         this.radius=radius;
