@@ -1,4 +1,4 @@
-package bai10_danh_sach.thuc_hanh.list;
+package bai10_danh_sach.thuc_hanh.mylist;
 
 import java.util.Arrays;
 
