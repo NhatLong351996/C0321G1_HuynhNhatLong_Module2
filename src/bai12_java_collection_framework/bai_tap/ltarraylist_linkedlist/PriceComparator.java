@@ -12,7 +12,7 @@ public class PriceComparator implements Comparator<Product> {
         }else if (o1.getPriceProduct()==o2.getPriceProduct()){
             return 0;
         }else {
-            return 1;
+            return -1;
         }
     }
 }
