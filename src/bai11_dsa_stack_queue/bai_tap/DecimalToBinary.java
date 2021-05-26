@@ -11,7 +11,7 @@ public class DecimalToBinary {
             decimalnum = decimalnum / 2;
         }
         while (!stack.isEmpty()) {
-            System.out.printf("%d", stack.pop());
+            System.out.printf("%text2", stack.pop());
         }
     }
         public static void main(String[] args) {

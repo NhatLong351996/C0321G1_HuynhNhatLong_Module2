@@ -18,7 +18,7 @@ public class InsertionSort {
 
         insertionSort(array);
         for (int i = 0; i < array.length; i++) {
-            System.out.printf("%d ", array[i]);
+            System.out.printf("%text2 ", array[i]);
         }
     }
 

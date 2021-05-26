@@ -28,7 +28,7 @@ public class AlgorithmComplexityTest {
         for (int k = 0; k < 255; k++) {
             if (arrayAcsii[k] != 0) {
                 c1 = (char) k;
-                System.out.printf("%s = %d; ", c1, arrayAcsii[k]);
+                System.out.printf("%s = %text2; ", c1, arrayAcsii[k]);
             }
         }
         //sắp xếp các chữ cái theo bảng mã Scii

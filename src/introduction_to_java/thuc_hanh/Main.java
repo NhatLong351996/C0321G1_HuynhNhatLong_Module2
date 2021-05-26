@@ -8,7 +8,7 @@ public class Main {
         String s = "Hà Nội";
         System.out.println("i = "+i);
         System.out.println("f = "+f);
-        System.out.println("d = "+d);
+        System.out.println("text2 = "+d);
         System.out.println("b = "+b);
         System.out.println("c = "+c);
         System.out.println("s = "+s);

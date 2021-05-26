@@ -43,7 +43,7 @@ public class Demo {
         int[] array = {1, 5, 2, 6, 4};
         selectionSort(array);
         for (int i = 0; i < array.length; i++) {
-            System.out.printf("%d ", array[i]);
+            System.out.printf("%text2 ", array[i]);
         }
     }
 }

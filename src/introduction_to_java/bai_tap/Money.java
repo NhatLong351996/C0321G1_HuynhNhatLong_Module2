@@ -9,6 +9,6 @@ public class Money {
         int usd = sc.nextInt();
         int vnd = usd*23000;
         System.out.printf("%-20s%s","USD","VND\n");
-        System.out.printf("%-20d%d",usd,vnd);
+        System.out.printf("%-20d%text2",usd,vnd);
     }
 }
