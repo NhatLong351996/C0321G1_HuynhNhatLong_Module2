@@ -1,6 +1,6 @@
 package Controllers;
 
-import Models.Services;
+import Models.services.Services;
 
 import java.util.Scanner;
 
@@ -20,17 +20,17 @@ public class ShowServices {
             int selectShow = scanner.nextInt();
             switch (selectShow) {
                 case 1:
-                    for (Services villa : AddNewServices.villas) {
+                    for (Object villa : AddNewServices.villas) {
                         System.out.println(villa.toString() + "\n");
                     }
                     break;
                 case 2:
-                    for (Services house : AddNewServices.houses) {
+                    for (Object house : AddNewServices.houses) {
                         System.out.println(house.toString() + "\n");
                     }
                     break;
                 case 3:
-                    for (Services room : AddNewServices.rooms) {
+                    for (Object room : AddNewServices.rooms) {
                         System.out.println(room.toString() + "\n");
                     }
                     break;

@@ -1,9 +1,7 @@
 package Commons;
 
-import Models.Services;
-import Models.Villa;
+import Models.user_exception.DateOfBirthException;
 
-import javax.xml.ws.Service;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +28,10 @@ public class ReadAndWrite {
         return list;
     }
 
-    public static void writeCSV(String path, List<Services> list) {
+    public static void writeCSV(String path, List<Object> list) {
         try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
-            for (Services string : list) {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path));
+            for (Object string : list) {
                 bufferedWriter.write(string.toString() + "\n");
             }
             bufferedWriter.close();
@@ -41,4 +39,6 @@ public class ReadAndWrite {
             e.printStackTrace();
         }
     }
+
+
 }

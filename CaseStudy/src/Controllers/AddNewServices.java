@@ -2,10 +2,7 @@ package Controllers;
 
 import Commons.ReadAndWrite;
 import Manager.ManagerService;
-import Models.House;
-import Models.Room;
-import Models.Services;
-import Models.Villa;
+import Models.services.Services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +10,9 @@ import java.util.Scanner;
 
 public class AddNewServices {
     static Scanner scanner = new Scanner(System.in);
-    public static List<Services> villas = new ArrayList<>();
-    public static List<Services> houses = new ArrayList<>();
-    public static List<Services> rooms = new ArrayList<>();
+    public static List<Object> villas = new ArrayList<>();
+    public static List<Object> houses = new ArrayList<>();
+    public static List<Object> rooms = new ArrayList<>();
 
     public static void addNewServies() {
         do {
@@ -30,15 +27,15 @@ public class AddNewServices {
             switch (selectServices) {
                 case 1:
                     ManagerService.addNewVilla(villas);
-                    ReadAndWrite.writeCSV("Villa.csv", villas);
+                    ReadAndWrite.writeCSV("src\\Data\\Villa.csv", villas);
                     break;
                 case 2:
                     ManagerService.addNewHouse(houses);
-                    ReadAndWrite.writeCSV("House.csv", houses);
+                    ReadAndWrite.writeCSV("src\\Data\\House.csv", houses);
                     break;
                 case 3:
                     ManagerService.addNewRoom(rooms);
-                    ReadAndWrite.writeCSV("Villa.csv", rooms);
+                    ReadAndWrite.writeCSV("src\\Data\\Villa.csv", rooms);
                     break;
                 case 4:
                     MainController.displayMainMenu();
