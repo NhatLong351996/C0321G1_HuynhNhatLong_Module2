@@ -29,42 +29,11 @@ public class Villa extends Services {
         this.poolArea = poolArea;
         this.floorNumbers = floorNumbers;
     }
-
-    @Override
-    public void setId(String id) {
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter ID: ");
-                id = scanner.nextLine();
-                IDException.idVillaException(id);
-            } catch (IDException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
-        super.setId(id);
-    }
-
-    public String getRoomStandard() {
+        public String getRoomStandard() {
         return roomStandard;
     }
 
-    public void setRoomStandard() {
-        String roomStandard = "";
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Room Standard: ");
-                roomStandard = scanner.nextLine();
-                NameServiceException.nameServiceException(roomStandard);
-            } catch (NameServiceException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
+    public void setRoomStandard(String roomStandard) {
         this.roomStandard = roomStandard;
     }
 
@@ -72,9 +41,7 @@ public class Villa extends Services {
         return convenients;
     }
 
-    public void setConvenients() {
-        System.out.println("Convenents: ");
-        String convenients = scanner.nextLine();
+    public void setConvenients(String convenients) {
         this.convenients = convenients;
     }
 
@@ -82,20 +49,7 @@ public class Villa extends Services {
         return poolArea;
     }
 
-    public void setPoolArea() {
-        double poolArea = 0;
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Pool Area: ");
-                poolArea = scanner.nextDouble();
-                AreaException.areaException(poolArea);
-            } catch (AreaException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
+    public void setPoolArea(double poolArea) {
         this.poolArea = poolArea;
     }
 
@@ -103,21 +57,16 @@ public class Villa extends Services {
         return floorNumbers;
     }
 
-    public void setFloorNumbers() {
-        int floor = 0;
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Floors Villa: ");
-                floor = scanner.nextInt();
-                FloorExeception.floorException(floor);
-            } catch (FloorExeception floorExeception) {
-                check = false;
-                floorExeception.printStackTrace();
-            }
-        } while (!check);
+    public void setFloorNumbers(int floor) {
         this.floorNumbers = floor;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +","+ roomStandard +
+                "," + convenients +
+                "," + poolArea +
+                "," + floorNumbers;
     }
 
     @Override

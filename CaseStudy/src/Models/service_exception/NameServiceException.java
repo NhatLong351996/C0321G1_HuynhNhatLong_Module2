@@ -3,7 +3,7 @@ package Models.service_exception;
 import java.util.regex.Pattern;
 
 public class NameServiceException extends Exception {
-    private static final String NAMESERVICE_REGEX = "^[A-Z]{1}[a-z]+$";
+    private static final String NAMESERVICE_REGEX = "^[A-Z][a-z]+$";
 
     public NameServiceException(String s) {
         super(s);

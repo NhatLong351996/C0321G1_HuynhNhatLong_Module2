@@ -1,26 +1,25 @@
 package Models.users;
 
-import Models.user_exception.DateOfBirthException;
-import Models.user_exception.EmailException;
-import Models.user_exception.IdCardException;
-import Models.user_exception.NameException;
+import Models.user_exception.*;
 
 import java.util.Scanner;
 
 public abstract class Person {
     private String namePerson;
     private String dateOfBirth;
+    private String gender;
     private String identityNumber;
     private String phoneNumber;
     private String email;
-    Scanner scanner = new Scanner(System.in);
+
 
     public Person() {
     }
 
-    public Person(String namePerson, String dateOfBirth, String identityNumber, String phoneNumber, String email) {
+    public Person(String namePerson, String dateOfBirth, String gender, String identityNumber, String phoneNumber, String email) {
         this.namePerson = namePerson;
         this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
         this.identityNumber = identityNumber;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -30,20 +29,7 @@ public abstract class Person {
         return namePerson;
     }
 
-    public void setNamePerson() {
-        String namePerson = "";
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Name Person: ");
-                namePerson = scanner.nextLine();
-                NameException.nameException(namePerson);
-            } catch (NameException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
+    public void setNamePerson(String namePerson) {
         this.namePerson = namePerson;
     }
 
@@ -51,41 +37,23 @@ public abstract class Person {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth() {
-        String dateOfBirth = "";
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Date Of Birth: ");
-                namePerson = scanner.nextLine();
-                DateOfBirthException.birthDayException(namePerson);
-            } catch (DateOfBirthException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getIdentityNumber() {
         return identityNumber;
     }
 
-    public void setIdentityNumber() {
-        String identityNumber = "";
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Identity Number: ");
-                identityNumber = scanner.nextLine();
-                IdCardException.idCardException(namePerson);
-            } catch (IdCardException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
+    public void setIdentityNumber(String identityNumber) {
         this.identityNumber = identityNumber;
     }
 
@@ -101,43 +69,18 @@ public abstract class Person {
         return email;
     }
 
-    public void setEmail() {
-        String email = "";
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Email: ");
-                email = scanner.nextLine();
-                EmailException.checkEmail(email);
-            } catch (EmailException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
+    public void setEmail(String email) {
         this.email = email;
     }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "namePerson='" + namePerson + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", identityNumber='" + identityNumber + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return namePerson +
+                "," + dateOfBirth +
+                "," + gender +
+                "," + identityNumber +
+                "," + phoneNumber +
+                "," + email;
     }
-
-    public static void main(String[] args) {
-        Scanner scanner=  new Scanner(System.in);
-        System.out.println("Enter the name of position");
-        String name = scanner.nextLine();
-        for (int i = 0;i<name.length();i++){
-            if ()
-        }
-    }
-    
-
 
 }

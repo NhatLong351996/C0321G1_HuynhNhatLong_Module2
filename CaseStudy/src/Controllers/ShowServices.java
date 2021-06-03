@@ -1,11 +1,18 @@
 package Controllers;
 
+import Commons.ReadAndWrite;
+import Models.services.House;
+import Models.services.Room;
 import Models.services.Services;
+import Models.services.Villa;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ShowServices {
-    public static void showServices() {
+    public static void showServices() throws IOException {
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("Select To Show: \n" +
@@ -20,19 +27,16 @@ public class ShowServices {
             int selectShow = scanner.nextInt();
             switch (selectShow) {
                 case 1:
-                    for (Object villa : AddNewServices.villas) {
-                        System.out.println(villa.toString() + "\n");
-                    }
+                    List<String> villa = ReadAndWrite.readCSV("src\\Data\\Villa.csv");
+                    System.out.println(villa);
                     break;
                 case 2:
-                    for (Object house : AddNewServices.houses) {
-                        System.out.println(house.toString() + "\n");
-                    }
+                    List<String> house = ReadAndWrite.readCSV("src\\Data\\House.csv");
+                    System.out.println(house);
                     break;
                 case 3:
-                    for (Object room : AddNewServices.rooms) {
-                        System.out.println(room.toString() + "\n");
-                    }
+                    List<String> room = ReadAndWrite.readCSV("src\\Data\\Room.csv");
+                    System.out.println(room);
                     break;
                 case 4:
                     break;

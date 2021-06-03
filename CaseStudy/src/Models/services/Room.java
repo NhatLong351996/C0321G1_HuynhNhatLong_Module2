@@ -39,20 +39,7 @@ public class Room extends Services {
         return freeServices;
     }
 
-    public void setFreeServices() {
-        String freeServices = "";
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Free SerVice: ");
-                freeServices = scanner.nextLine();
-                FreeServiceException.freeSerciceException(freeServices);
-            } catch (FreeServiceException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
+    public void setFreeServices(String freeServices) {
         this.freeServices = freeServices;
     }
 
@@ -61,5 +48,10 @@ public class Room extends Services {
         return "Room{" +
                 "freeServices='" + freeServices + '\'' +
                 "} " + super.toString();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"," + freeServices ;
     }
 }

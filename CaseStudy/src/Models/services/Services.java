@@ -40,20 +40,7 @@ public abstract class Services {
         return nameService;
     }
 
-    public void setNameService() {
-        boolean check;
-        String nameService = "";
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Name Service: ");
-                nameService = scanner.nextLine();
-                NameServiceException.nameServiceException(nameService);
-            } catch (NameServiceException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
+    public void setNameService(String nameService) {
         this.nameService = nameService;
     }
 
@@ -61,20 +48,7 @@ public abstract class Services {
         return area;
     }
 
-    public void setArea() {
-        double area = 0;
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Area (m2): ");
-                area = scanner.nextDouble();
-                AreaException.areaException(area);
-            } catch (AreaException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
+    public void setArea(double area) {
         this.area = area;
     }
 
@@ -82,21 +56,7 @@ public abstract class Services {
         return rentalCosts;
     }
 
-    public void setRentalCosts() {
-        int rentalCosts = 0;
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Rental Cost: ");
-                rentalCosts = scanner.nextInt();
-                CostException.costException(rentalCosts);
-
-            } catch (CostException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
+    public void setRentalCosts(int rentalCosts) {
         this.rentalCosts = rentalCosts;
     }
 
@@ -104,20 +64,7 @@ public abstract class Services {
         return maxNumber;
     }
 
-    public void setMaxNumber() {
-        int maxNumber=0;
-        boolean check;
-        do {
-            check=true;
-            try {
-                System.out.println("Enter max number of customer: ");
-                maxNumber = scanner.nextInt();
-                MaxNumberException.maxNumber(maxNumber);
-            } catch (MaxNumberException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        }while (!check);
+    public void setMaxNumber(int maxNumber) {
         this.maxNumber = maxNumber;
     }
 
@@ -125,20 +72,7 @@ public abstract class Services {
         return rentalType;
     }
 
-    public void setRentalType() {
-        String rentalType="";
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Rental Type: ");
-                rentalType = scanner.nextLine();
-                NameServiceException.nameServiceException(rentalType);
-            } catch (NameServiceException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        }while (!check);
+    public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
 
@@ -146,13 +80,11 @@ public abstract class Services {
 
     @Override
     public String toString() {
-        return "Services{" +
-                "id='" + id + '\'' +
-                ", nameService='" + nameService + '\'' +
-                ", area=" + area +
-                ", rentalCosts=" + rentalCosts +
-                ", maxNumber=" + maxNumber +
-                ", rentalType='" + rentalType + '\'' +
-                '}';
+        return id + "," +
+                nameService + "," +
+                area +
+                "," + rentalCosts +
+                "," + maxNumber +
+                "," + rentalType;
     }
 }

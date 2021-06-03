@@ -3,9 +3,9 @@ package Models.service_exception;
 import java.util.regex.Pattern;
 
 public class IDException extends Exception {
-    private static final String ID_VILLA_REGEX = "^[SVVL]\\-[0-9]{4}$";
-    private static final String ID_HOUSE_REGEX = "^[SVHO]\\-[0-9]{4}$";
-    private static final String ID_ROOM_REGEX = "^[SVRO]\\-[0-9]{4}$";
+    private static final String ID_VILLA_REGEX = "^SVVL\\-[0-9]{4}$";
+    private static final String ID_HOUSE_REGEX = "^SVHO\\-[0-9]{4}$";
+    private static final String ID_ROOM_REGEX = "^SVRO\\-[0-9]{4}$";
 
     public IDException(String s) {
         super(s);

@@ -25,51 +25,20 @@ public class House extends Services {
         this.floorNumbers = floorNumbers;
     }
 
-    @Override
-    public void setId(String id) {
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter ID House: ");
-                id = scanner.nextLine();
-                IDException.idHouseException(id);
-            } catch (IDException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
-        super.setId(id);
-    }
 
     public String getRoomStandar() {
         return roomStandar;
     }
 
-    public void setRoomStandar() {
-        String roomStandard = "";
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter Room Standard: ");
-                roomStandard = scanner.nextLine();
-                NameServiceException.nameServiceException(roomStandard);
-            } catch (NameServiceException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
-        this.roomStandar = roomStandar;
+    public void setRoomStandar(String roomStandard) {
+        this.roomStandar = roomStandard;
     }
 
     public String getConvenient() {
         return convenient;
     }
 
-    public void setConvenient() {
-        System.out.println("Convenents: ");
-        String convenient = scanner.nextLine();
+    public void setConvenient(String convenient) {
         this.convenient = convenient;
     }
 
@@ -77,21 +46,7 @@ public class House extends Services {
         return floorNumbers;
     }
 
-    public void setFloorNumbers() {
-        int floor = 0;
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter House's Floor: ");
-                floor = scanner.nextInt();
-                FloorExeception.floorException(floor);
-
-            } catch (FloorExeception floorExeception) {
-                check = false;
-                floorExeception.printStackTrace();
-            }
-        } while (!check);
+    public void setFloorNumbers(int floor) {
         this.floorNumbers = floor;
     }
 
@@ -102,5 +57,12 @@ public class House extends Services {
                 ", convenient='" + convenient + '\'' +
                 ", floorNumbers=" + floorNumbers +
                 "} " + super.toString();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "," + roomStandar +
+                "," + convenient +
+                "," + floorNumbers;
     }
 }

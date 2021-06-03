@@ -2,7 +2,9 @@ package Models.users;
 
 import Models.services.Services;
 
-public class Customer extends Person {
+import Models.user_exception.TypeCustomerException;
+
+public class Customer extends Person implements Comparable<Customer>{
     private String typeCustomer;
     private String adress;
     private Services services;
@@ -16,11 +18,10 @@ public class Customer extends Person {
         this.services = services;
     }
 
-    public Customer(String namePerson, String dateOfBirth, String identityNumber, String phoneNumber, String email, String typeCustomer, String adress, Services services) {
-        super(namePerson, dateOfBirth, identityNumber, phoneNumber, email);
+    public Customer(String namePerson, String dateOfBirth, String gender, String identityNumber, String phoneNumber, String email, String typeCustomer, String adress) {
+        super(namePerson, dateOfBirth, gender, identityNumber, phoneNumber, email);
         this.typeCustomer = typeCustomer;
         this.adress = adress;
-        this.services = services;
     }
 
     public String getTypeCustomer() {
@@ -47,11 +48,25 @@ public class Customer extends Person {
         this.services = services;
     }
 
+
     public String showInfor() {
         return "Customer{" +
                 "typeCustomer='" + typeCustomer + '\'' +
                 ", adress='" + adress + '\'' +
                 ", services=" + services +
                 "} " + super.toString();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "," + typeCustomer +
+                "," + adress ;
+    }
+
+
+    @Override
+    public int compareTo(Customer o) {
+        return this.getNamePerson().compareTo(o.getNamePerson());
     }
 }
