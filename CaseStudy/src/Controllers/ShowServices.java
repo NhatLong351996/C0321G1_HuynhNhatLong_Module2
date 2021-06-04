@@ -1,6 +1,7 @@
 package Controllers;
 
 import Commons.ReadAndWrite;
+import Manager.ManagerService;
 import Models.services.House;
 import Models.services.Room;
 import Models.services.Services;
@@ -27,16 +28,13 @@ public class ShowServices {
             int selectShow = scanner.nextInt();
             switch (selectShow) {
                 case 1:
-                    List<String> villa = ReadAndWrite.readCSV("src\\Data\\Villa.csv");
-                    System.out.println(villa);
+                    ManagerService.showVilla();
                     break;
                 case 2:
-                    List<String> house = ReadAndWrite.readCSV("src\\Data\\House.csv");
-                    System.out.println(house);
+                    ManagerService.showHouse();
                     break;
                 case 3:
-                    List<String> room = ReadAndWrite.readCSV("src\\Data\\Room.csv");
-                    System.out.println(room);
+                    ManagerService.showRoom();
                     break;
                 case 4:
                     break;

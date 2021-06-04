@@ -142,10 +142,37 @@ public class ReadAndWrite {
         return customers;
     }
 
-    public static void writeCSV_Booking(String path, Customer customer) {
+    public static void writeCustomer_Booking(String path, Customer customer) {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
             bufferedWriter.write(customer.toString() + "\n");
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void writeVilla_Booking(String path, Villa villa) {
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
+            bufferedWriter.write(villa.toString() + "\n");
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void writeHouse_Booking(String path, House house) {
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
+            bufferedWriter.write(house.toString() + "\n");
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void writeRoom_Booking(String path, Room room) {
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
+            bufferedWriter.write(room.toString() + "\n");
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();

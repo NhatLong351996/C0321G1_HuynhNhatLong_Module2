@@ -107,7 +107,7 @@ public class ManagerCustomer {
         Collections.sort(list);
         int i=0;
         for (Customer customer:list){
-            System.out.println(i+ ". "+ customer+"\n");
+            System.out.println(i+ ". "+ customer.toString()+"\n");
             i++;
         }
     }

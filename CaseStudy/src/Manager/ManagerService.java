@@ -326,7 +326,30 @@ public class ManagerService {
         rooms.add(new Room(id, nameService, area, rentalCosts, maxNumber, rentalType, freeServices));
     }
     public static void showVilla(){
-        ReadAndWrite.readCSV("src\\Data\\Villa.csv");
+        List<Villa> villas = ReadAndWrite.readCSV_Villa("src\\Data\\Villa.csv");
+        int i=0;
+        System.out.println("Danh sách Villa: ");
+        for (Villa villa:villas){
+            System.out.println(i+". "+ villa.toString()+"\n");
+            i++;
+        }
+    }
+    public static void showHouse(){
+        List<House> houses = ReadAndWrite.readCSV_House("src\\Data\\House.csv");
+        int i =0;
+        System.out.println("Danh sách House: ");
+        for (House house:houses){
+            System.out.println(i+". "+house.toString()+"\n");
+            i++;
+        }
+    }
+    public static void showRoom(){
+        List<Room> rooms = ReadAndWrite.readCSV_Room("src\\Data\\Room.csv");
+        int i =0;
+        System.out.println("Danh sách Room: ");
+        for (Room room:rooms){
+            System.out.println(i+". "+room.toString()+"\n");
+        }
     }
 
     public static void main(String[] args) {

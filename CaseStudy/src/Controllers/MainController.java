@@ -1,6 +1,7 @@
 package Controllers;
 
 import Commons.ReadAndWrite;
+import Manager.ManagerBooking;
 import Manager.ManagerCustomer;
 import Manager.ManagerService;
 import Models.*;
@@ -35,7 +36,7 @@ public class MainController {
                     break;
                 case 3:
                     ManagerCustomer.addNewCustomer(customer);
-                    ReadAndWrite.writeCSV_Customer("src\\Data\\Customer.csv",customer);
+                    ReadAndWrite.writeCSV_Customer("src\\Data\\Customer.csv", customer);
                     break;
                 case 4:
                     ManagerCustomer.showInformation();
@@ -45,23 +46,27 @@ public class MainController {
                     System.out.println("Nhập thứ tự khách hàng cần book ");
                     int number = scanner.nextInt();
                     List<Customer> list = ReadAndWrite.readCSV_Customer("src\\Data\\Customer.csv");
-                    Customer customer= list.get(number);
-                    ReadAndWrite.writeCSV_Booking("src\\Data\\FileBooking.csv",customer);
-                    System.out.println("Nhập dịch vụ cần book: "+"\n"
-                    +"1. Booking Villa.\n"
-                    +"2. Booking House.\n"
-                    +"3. Booking Room.\n");
-                    int select = scanner.nextInt();
-                    switch (select){
-                        case 1:
-                            System.out.println();
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                    }
-
-
+                    Customer customer = list.get(number);
+                    ReadAndWrite.writeCustomer_Booking("src\\Data\\FileBooking.csv", customer);
+                    boolean check;
+                    do {
+                        check=true;
+                        int num = ManagerBooking.showListToBook();
+                        switch (num) {
+                            case 1:
+                                ManagerBooking.bookingVilla();
+                                break;
+                            case 2:
+                                ManagerBooking.bookingHouse();
+                                break;
+                            case 3:
+                                ManagerBooking.bookingRoom();
+                                break;
+                            default:
+                                System.out.println("Không nhập đúng, yêu cầu nhập lại");
+                                check = false;
+                        }
+                    }while (!check);
                     break;
                 case 6:
                     break;
@@ -69,7 +74,7 @@ public class MainController {
                     break;
                 default:
             }
-        }while (true);
+        } while (true);
 
     }
 
