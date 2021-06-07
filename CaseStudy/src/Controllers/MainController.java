@@ -3,18 +3,15 @@ package Controllers;
 import Commons.ReadAndWrite;
 import Manager.ManagerBooking;
 import Manager.ManagerCustomer;
-import Manager.ManagerService;
-import Models.*;
 import Models.users.Customer;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class MainController {
     static Scanner scanner = new Scanner(System.in);
-    static List<Customer> customer = new ArrayList<>();
+
 
     public static void displayMainMenu() throws IOException {
         do {
@@ -35,8 +32,7 @@ public class MainController {
                     ShowServices.showServices();
                     break;
                 case 3:
-                    ManagerCustomer.addNewCustomer(customer);
-                    ReadAndWrite.writeCSV_Customer("src\\Data\\Customer.csv", customer);
+                    ManagerCustomer.addNewCustomer();
                     break;
                 case 4:
                     ManagerCustomer.showInformation();

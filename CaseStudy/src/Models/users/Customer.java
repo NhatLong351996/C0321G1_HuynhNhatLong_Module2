@@ -2,8 +2,6 @@ package Models.users;
 
 import Models.services.Services;
 
-import Models.user_exception.TypeCustomerException;
-
 public class Customer extends Person implements Comparable<Customer>{
     private String typeCustomer;
     private String adress;

@@ -4,7 +4,7 @@ import Models.service_exception.FloorExeception;
 import Models.service_exception.IDException;
 import Models.service_exception.NameServiceException;
 
-public class House extends Services {
+public class House extends Services implements Comparable<House> {
     private String roomStandar;
     private String convenient;
     private int floorNumbers;
@@ -64,5 +64,10 @@ public class House extends Services {
         return super.toString() + "," + roomStandar +
                 "," + convenient +
                 "," + floorNumbers;
+    }
+
+    @Override
+    public int compareTo(House o) {
+        return this.getNameService().compareTo(o.getNameService());
     }
 }

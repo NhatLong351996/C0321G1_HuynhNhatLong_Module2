@@ -8,8 +8,10 @@ import Models.services.Room;
 import Models.services.Services;
 import Models.services.Villa;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 
 public class ManagerService {
@@ -325,36 +327,88 @@ public class ManagerService {
         } while (!check);
         rooms.add(new Room(id, nameService, area, rentalCosts, maxNumber, rentalType, freeServices));
     }
-    public static void showVilla(){
+
+    public static void showVilla() {
         List<Villa> villas = ReadAndWrite.readCSV_Villa("src\\Data\\Villa.csv");
-        int i=0;
+        int i = 0;
         System.out.println("Danh sách Villa: ");
-        for (Villa villa:villas){
-            System.out.println(i+". "+ villa.toString()+"\n");
+        for (Villa villa : villas) {
+            System.out.println(i + ". " + villa.toString() + "\n");
             i++;
         }
     }
-    public static void showHouse(){
+
+    public static void showHouse() {
         List<House> houses = ReadAndWrite.readCSV_House("src\\Data\\House.csv");
-        int i =0;
+        int i = 0;
         System.out.println("Danh sách House: ");
-        for (House house:houses){
-            System.out.println(i+". "+house.toString()+"\n");
+        for (House house : houses) {
+            System.out.println(i + ". " + house.toString() + "\n");
             i++;
         }
     }
-    public static void showRoom(){
+
+    public static void showRoom() {
         List<Room> rooms = ReadAndWrite.readCSV_Room("src\\Data\\Room.csv");
-        int i =0;
+        int i = 0;
         System.out.println("Danh sách Room: ");
-        for (Room room:rooms){
-            System.out.println(i+". "+room.toString()+"\n");
+        for (Room room : rooms) {
+            System.out.println(i + ". " + room.toString() + "\n");
+        }
+    }
+
+    public static void showVillaNotDuplicate() {
+        List<Villa> villas = ReadAndWrite.readCSV_Villa("src\\Data\\Villa.csv");
+        TreeSet<Villa> emptyVilla = new TreeSet<>();
+        TreeSet<Villa> treeSet = new TreeSet<>();
+        for (Villa villa : villas) {
+            if (treeSet.contains(villa) || emptyVilla.contains(villa)) {
+                treeSet.remove(villa);
+                emptyVilla.add(villa);
+            } else {
+                treeSet.add(villa);
+            }
+        }
+        for (Villa villa : treeSet) {
+            System.out.println(villa + "\n");
+        }
+    }
+
+    public static void showHouseNotDuplicate() {
+        List<House> houses = ReadAndWrite.readCSV_House("src\\Data\\House.csv");
+        TreeSet<House> houseTreeSet = new TreeSet<>();
+        TreeSet<House> emptyHouses = new TreeSet<>();
+        for (House house : houses) {
+            if (houseTreeSet.contains(house) || emptyHouses.contains(house)) {
+                houseTreeSet.remove(house);
+                emptyHouses.add(house);
+            } else {
+                houseTreeSet.add(house);
+            }
+        }
+        for (House house : houseTreeSet) {
+            System.out.println(house + "\n");
+        }
+    }
+    public static void showRoomNotDuplicate(){
+        List<Room> rooms = ReadAndWrite.readCSV_Room("src\\Data\\Room.csv");
+        TreeSet<Room> roomTreeSet = new TreeSet<>();
+        TreeSet<Room> emptyRoomTreeSet = new TreeSet<>();
+        for (Room room: rooms){
+            if (roomTreeSet.contains(room)||emptyRoomTreeSet.contains(room)){
+                roomTreeSet.remove(room);
+                emptyRoomTreeSet.add(room);
+            }else {
+                roomTreeSet.add(room);
+            }
+        }
+        for (Room room: roomTreeSet){
+            System.out.println(room+"\n");
         }
     }
 
     public static void main(String[] args) {
-        addNewVilla(AddNewServices.villas);
-        System.out.println(AddNewServices.villas);
+        showVillaNotDuplicate();
 
     }
 }

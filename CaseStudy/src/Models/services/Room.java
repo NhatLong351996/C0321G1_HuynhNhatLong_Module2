@@ -3,7 +3,7 @@ package Models.services;
 import Models.service_exception.FreeServiceException;
 import Models.service_exception.IDException;
 
-public class Room extends Services {
+public class Room extends Services implements Comparable<Room> {
     private String freeServices;
 
     public Room() {
@@ -18,22 +18,6 @@ public class Room extends Services {
         this.freeServices = freeServices;
     }
 
-    @Override
-    public void setId(String id) {
-        boolean check;
-        do {
-            check = true;
-            try {
-                System.out.println("Enter ID Room: ");
-                id = scanner.nextLine();
-                IDException.idRoomException(id);
-            } catch (IDException e) {
-                check = false;
-                e.printStackTrace();
-            }
-        } while (!check);
-        super.setId(id);
-    }
 
     public String getFreeServices() {
         return freeServices;
@@ -53,5 +37,10 @@ public class Room extends Services {
     @Override
     public String toString() {
         return super.toString()+"," + freeServices ;
+    }
+
+    @Override
+    public int compareTo(Room o) {
+        return this.getNameService().compareTo(o.getNameService());
     }
 }

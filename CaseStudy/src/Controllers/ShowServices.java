@@ -1,15 +1,6 @@
 package Controllers;
-
-import Commons.ReadAndWrite;
 import Manager.ManagerService;
-import Models.services.House;
-import Models.services.Room;
-import Models.services.Services;
-import Models.services.Villa;
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class ShowServices {
@@ -37,10 +28,13 @@ public class ShowServices {
                     ManagerService.showRoom();
                     break;
                 case 4:
+                    ManagerService.showVillaNotDuplicate();
                     break;
                 case 5:
+                    ManagerService.showHouseNotDuplicate();
                     break;
                 case 6:
+                    ManagerService.showRoomNotDuplicate();
                     break;
                 case 7:
                     MainController.displayMainMenu();

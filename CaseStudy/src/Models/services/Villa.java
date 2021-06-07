@@ -1,13 +1,8 @@
 package Models.services;
 
-import Models.service_exception.AreaException;
-import Models.service_exception.FloorExeception;
-import Models.service_exception.IDException;
-import Models.service_exception.NameServiceException;
-
-public class Villa extends Services {
+public class Villa extends Services implements Comparable<Villa> {
     private String roomStandard;
-    private String convenients;
+    private String convenient;
     private double poolArea;
     private int floorNumbers;
 
@@ -15,17 +10,18 @@ public class Villa extends Services {
     public Villa() {
     }
 
-    public Villa(String roomStandard, String convenients, double poolArea, int floorNumbers) {
+    public Villa(String roomStandard, String convenient, double poolArea, int floorNumbers) {
         this.roomStandard = roomStandard;
-        this.convenients = convenients;
+        this.convenient = convenient;
         this.poolArea = poolArea;
         this.floorNumbers = floorNumbers;
     }
 
-    public Villa(String id, String nameService, double area, int rentalCosts, int maxNumber, String rentalType, String roomStandard, String convenients, double poolArea, int floorNumbers) {
+    public Villa(String id, String nameService, double area, int rentalCosts, int maxNumber, String rentalType, String roomStandard
+            , String convenients, double poolArea, int floorNumbers) {
         super(id, nameService, area, rentalCosts, maxNumber, rentalType);
         this.roomStandard = roomStandard;
-        this.convenients = convenients;
+        this.convenient = convenients;
         this.poolArea = poolArea;
         this.floorNumbers = floorNumbers;
     }
@@ -37,12 +33,12 @@ public class Villa extends Services {
         this.roomStandard = roomStandard;
     }
 
-    public String getConvenients() {
-        return convenients;
+    public String getConvenient() {
+        return convenient;
     }
 
-    public void setConvenients(String convenients) {
-        this.convenients = convenients;
+    public void setConvenient(String convenient) {
+        this.convenient = convenient;
     }
 
     public double getPoolArea() {
@@ -64,7 +60,7 @@ public class Villa extends Services {
     @Override
     public String toString() {
         return super.toString() +","+ roomStandard +
-                "," + convenients +
+                "," + convenient +
                 "," + poolArea +
                 "," + floorNumbers;
     }
@@ -73,9 +69,14 @@ public class Villa extends Services {
     public String showInfor() {
         return "Villa{" +
                 "roomStandard='" + roomStandard + '\'' +
-                ", convenients='" + convenients + '\'' +
+                ", convenients='" + convenient + '\'' +
                 ", poolArea=" + poolArea +
                 ", floorNumbers=" + floorNumbers +
                 "} " + super.toString();
+    }
+
+    @Override
+    public int compareTo(Villa o) {
+        return this.getNameService().compareTo(o.getNameService());
     }
 }

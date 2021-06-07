@@ -14,7 +14,7 @@ public abstract class Services {
     private int rentalCosts;
     private int maxNumber;
     private String rentalType;
-    Scanner scanner = new Scanner(System.in);
+
 
     public Services() {
     }

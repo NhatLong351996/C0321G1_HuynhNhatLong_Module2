@@ -4,10 +4,13 @@ import Models.services.House;
 import Models.services.Room;
 import Models.services.Villa;
 import Models.users.Customer;
+import Models.users.Employee;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ReadAndWrite {
     public static List<String> readCSV(String filepath) {
@@ -151,6 +154,7 @@ public class ReadAndWrite {
             e.printStackTrace();
         }
     }
+
     public static void writeVilla_Booking(String path, Villa villa) {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
@@ -160,6 +164,7 @@ public class ReadAndWrite {
             e.printStackTrace();
         }
     }
+
     public static void writeHouse_Booking(String path, House house) {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
@@ -169,6 +174,7 @@ public class ReadAndWrite {
             e.printStackTrace();
         }
     }
+
     public static void writeRoom_Booking(String path, Room room) {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true));
@@ -179,4 +185,18 @@ public class ReadAndWrite {
         }
     }
 
+    public static Map<String,Employee> readEmployee() {
+        Map<String, Employee> map = new HashMap<>();
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("src\\Data\\Employee.csv"));
+            String line = "";
+            while ((line = bufferedReader.readLine()) != null) {
+                  String[] strings= line.split(",");
+                  map.put(strings[0],new Employee(strings[1],strings[2],strings[3]));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return map;
+    }
 }

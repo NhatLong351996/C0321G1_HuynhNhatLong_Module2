@@ -5,13 +5,15 @@ import Models.user_exception.*;
 import Models.users.Customer;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class ManagerCustomer {
     static Scanner scanner = new Scanner(System.in);
-    public static void addNewCustomer(List<Customer> customers) {
+    public static void addNewCustomer() {
+        List<Customer> customers= new ArrayList<>();
         boolean check;
         String namePerson="";
         do {
@@ -27,16 +29,16 @@ public class ManagerCustomer {
         } while (!check);
         String dateOfBirth="";
         do {
-            check = true;
             try {
                 System.out.println("Enter Date Of Birth: ");
                 dateOfBirth = scanner.nextLine();
-                DateOfBirthException.birthDayException(dateOfBirth);
+                ValidateDateOfBirthException.checkBirthDayException(dateOfBirth);
+                break;
             } catch (DateOfBirthException e) {
-                check = false;
                 e.printStackTrace();
+                e.getMessage();
             }
-        } while (!check);
+        } while (true);
         String gender="";
         do {
             check = true;
@@ -88,19 +90,20 @@ public class ManagerCustomer {
         } while (!check);
         String typeCustomer="";
         do {
-            check = true;
             try {
                 System.out.println("Enter Type Customer: ");
                 typeCustomer = scanner.nextLine();
-                TypeCustomerException.checkType(typeCustomer);
-            } catch (TypeCustomerException e) {
-                check = false;
+                ValidateCustomer.checkType(typeCustomer);
+                break;
+            } catch (CustomerException e) {
                 e.printStackTrace();
+                System.err.println(e.getMessage());
             }
-        } while (!check);
+        } while (true);
         System.out.println("Enter Adress: ");
         String adress = scanner.nextLine();
         customers.add(new Customer(namePerson,dateOfBirth,gender,identityNumber,phoneNumber,email,typeCustomer,adress));
+        ReadAndWrite.writeCSV_Customer("src\\Data\\Customer.csv", customers);
     }
     public static void showInformation() throws IOException {
         List<Customer> list = ReadAndWrite.readCSV_Customer("src\\Data\\Customer.csv");
@@ -109,7 +112,11 @@ public class ManagerCustomer {
         for (Customer customer:list){
             System.out.println(i+ ". "+ customer.toString()+"\n");
             i++;
+
         }
+        /*for (int j=0;j<list.size();j++){
+            System.out.println(i+". "+list.get(j).toString());
+        }*/
     }
 
 }
